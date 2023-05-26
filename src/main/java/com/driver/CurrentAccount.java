@@ -58,7 +58,7 @@ public class CurrentAccount extends BankAccount{
             }
             if(n%2==0)
             {
-                if(max>n/2)
+                if(max > n/2)
                     throw new InValidLicenseIdException("Valid License can not possible");
             }else{
                 if(max > (n+1)/2)
@@ -79,10 +79,13 @@ public class CurrentAccount extends BankAccount{
                     arr[i]=c;
                     i+=2;
                     hm.put(c,map.getValue()-1);
+                    if(i>=n){
+                        i=1;
+                    }
                 }
-                if(i>=n){
-                    i=1;
-                }
+//                if(i>=n){
+//                    i=1;
+//                }
             }
             this.tradeLicenseId=arr.toString();
         }
