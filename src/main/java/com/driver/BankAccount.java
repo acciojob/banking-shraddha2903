@@ -19,14 +19,13 @@ public class BankAccount {
         //If it is not possible, throw "Account Number can not be generated" exception
         StringBuilder accNo= new StringBuilder("");
         int remainSum=sum;
-        int n=digits;
         if(sum>9*digits || sum<0)
-            throw new AccountNumberCanNotGenerated("Account number can not generated");
+            throw new AccountNumberCanNotBeGenerated("Account number can not be generated");
 
-        for(int i=0;i<n;i++)
+        for(int i = 0; i< digits; i++)
         {
             int min=Math.min(9,remainSum);
-            accNo.append(String.valueOf(min));
+            accNo.append(min);
             remainSum-=min;
 
         }
@@ -44,6 +43,7 @@ public class BankAccount {
 
         if(amount>this.balance || (this.balance-amount)<this.minBalance)
             throw new InsufficientBalanceException("Insufficient Balance");
+        this.balance-=amount;
     }
 
     public String getName() {
