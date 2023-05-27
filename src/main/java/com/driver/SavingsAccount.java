@@ -28,13 +28,13 @@ public class SavingsAccount extends BankAccount{
         // minimum balance is 0 by default
 
     }
-    public void withdraw(double amount) throws Exception {
+    public void withdraw(double amount) throws InsufficientBalanceException,MaximumWithdrawLimitExceed {
         if(amount > super.getBalance())
         {
             throw new InsufficientBalanceException("Insufficient Balance");
         }
         if(amount>maxWithdrawalLimit)
-            throw new MaximumWithdrawLimitException("Maximum Withdraw Limit Exceed");
+            throw new MaximumWithdrawLimitExceed("Maximum Withdraw Limit Exceed");
 
         super.setBalance(super.getBalance()-amount);
         // Might throw the following errors:
