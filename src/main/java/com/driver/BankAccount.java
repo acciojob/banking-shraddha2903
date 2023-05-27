@@ -20,7 +20,7 @@ public class BankAccount {
         StringBuilder accNo= new StringBuilder("");
         int remainSum=sum;
         if(sum>9*digits || sum<0)
-            throw new AccountNumberCanNotBeGenerated("Account number can not be generated");
+            throw new AccountNumberCanNotBeGenerated("Account Number can not be generated");
 
         for(int i = 0; i< digits; i++)
         {
