@@ -44,11 +44,9 @@ public class CurrentAccount extends BankAccount {
                 break;
             }
         }
-        if (!isValid) {
+        if(!isValid) {
            this.tradeLicenseId = rearrangeString(this.tradeLicenseId);
         }
-
-
     }
 
     static String rearrangeString(String str) throws InValidLicenseIdException {
@@ -58,7 +56,7 @@ public class CurrentAccount extends BankAccount {
         int[] count = new int[MAX_CHAR];
 
         for (int i = 0; i < n; i++)
-            count[str.charAt(i) - 'a']++;
+            count[str.charAt(i) - 'A']++;
 
         // Insert all characters with their
         // frequencies into a priority_queue
@@ -103,7 +101,7 @@ public class CurrentAccount extends BankAccount {
         // and original string is not same then
         // string is not valid
         if (n != str.length())
-            throw new InValidLicenseIdException("Valid License can not possible");
+            throw new InValidLicenseIdException("Valid License can not be generated");
 
         else
             return str;
